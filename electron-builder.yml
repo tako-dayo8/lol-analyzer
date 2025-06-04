@@ -1,0 +1,7 @@
+nsis:
+    artifactName: ${name}-${version}-setup.${ext}
+    shortcutName: ${productName}
+    uninstallDisplayName: ${productName}
+    createDesktopShortcut: always
+    oneClick": false # add
+    allowToChangeInstallationDirectory: true # add

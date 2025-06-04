@@ -1,0 +1,44 @@
+{
+    "name": "lol-analyzer",
+    "description": "A League of Legends game analyzer built with React and Electron.",
+    "private": true,
+    "version": "0.0.0",
+    "main": "build/electron/main.js",
+    "scripts": {
+        "dev": "vite",
+        "electoron:deb": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && tsc -p electron && electron .\"",
+        "build": "tsc -b && vite build --outDir build",
+        "electron:build": "npm run build && tsc -p electron && electron-builder",
+        "start": "npm run build && tsc -p electron && cross-env DEV_MODE=file electron .",
+        "lint": "eslint .",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.25.0",
+        "@types/react": "^19.1.2",
+        "@types/react-dom": "^19.1.2",
+        "@vitejs/plugin-react": "^4.4.1",
+        "concurrently": "^9.1.2",
+        "cross-env": "^7.0.3",
+        "electron": "^36.3.2",
+        "electron-builder": "^26.0.12",
+        "eslint": "^9.25.0",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.19",
+        "globals": "^16.0.0",
+        "typescript": "~5.8.3",
+        "typescript-eslint": "^8.30.1",
+        "vite": "^6.3.5",
+        "wait-on": "^8.0.3"
+    },
+    "build": {
+        "files": [
+            "build/**/*"
+        ],
+        "extends": null
+    }
+}
